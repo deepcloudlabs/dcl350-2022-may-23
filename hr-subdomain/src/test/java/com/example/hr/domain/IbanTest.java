@@ -11,14 +11,14 @@ import org.junit.jupiter.params.provider.CsvFileSource;
 class IbanTest {
 
 	@ParameterizedTest
-	@CsvFileSource(resources = "./iban-valid.csv")
+	@CsvFileSource(resources = "/resources/iban-valid.csv")
 	void validIbanTest(String value) {
 		var iban = Iban.create(value);
 		assertAll(() -> assertNotNull(iban), () -> assertEquals(value, iban.getValue()));
 	}
 
 	@ParameterizedTest
-	@CsvFileSource(resources = "iban-invalid.csv")
+	@CsvFileSource(resources = "/resources/iban-invalid.csv")
 	void invalidIbanTest(String value) {
 		assertThrows(IllegalArgumentException.class, () -> Iban.create(value));
 	}

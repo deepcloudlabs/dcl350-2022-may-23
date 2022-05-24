@@ -9,7 +9,7 @@ import org.junit.jupiter.params.provider.CsvFileSource;
 class EmployeeTest {
 
 	@ParameterizedTest
-	@CsvFileSource(resources = "employees.csv")
+	@CsvFileSource(resources = "/resources/employees.csv")
 	void createEmployeeSuccessfully(String identity,String firstName,String lastName,
 			String iban,double salary,String currency,String jobStyle,int birthYear,String department,String base64Photo) {
 	    // 1. Test Setup/Fixture -> CUT

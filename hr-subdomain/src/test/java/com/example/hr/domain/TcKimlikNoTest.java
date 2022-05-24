@@ -11,14 +11,14 @@ import org.junit.jupiter.params.provider.CsvFileSource;
 class TcKimlikNoTest {
 
 	@ParameterizedTest
-	@CsvFileSource(resources = "tckimlikno-valid.csv")
+	@CsvFileSource(resources = "/resources/tckimlikno-valid.csv")
 	void validTcKimlikNoTest(String value) {
 		TcKimlikNo kimlik = TcKimlikNo.valueOf(value);
 		assertAll(() -> assertNotNull(kimlik), () -> assertEquals(value, kimlik.getValue()));
 	}
 
 	@ParameterizedTest
-	@CsvFileSource(resources = "tckimlikno-invalid.csv")
+	@CsvFileSource(resources = "/resources/tckimlikno-invalid.csv")
 	void invalidTcKimlikNoTest(String value) {
 		assertThrows(IllegalArgumentException.class, () -> TcKimlikNo.valueOf(value));
 	}
