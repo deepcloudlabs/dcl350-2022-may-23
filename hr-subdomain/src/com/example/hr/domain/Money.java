@@ -31,7 +31,7 @@ public class Money {
 	}
 
 	public static Money valueOf(double value, FiatCurrency currency) {
-		if (Objects.nonNull(currency))
+		if (Objects.isNull(currency))
 			throw new IllegalArgumentException("Currenct must be a non null value.");
 		if (value <= 0.)
 			throw new IllegalArgumentException("Money value must be positive.");
