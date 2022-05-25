@@ -10,6 +10,8 @@ import javax.persistence.Table;
 
 import com.example.hr.domain.Department;
 import com.example.hr.domain.JobStyle;
+import com.example.validation.Iban;
+import com.example.validation.TcKimlikNo;
 
 import lombok.Data;
 
@@ -18,11 +20,13 @@ import lombok.Data;
 @Data
 public class EmployeeEntity {
 	@Id
+	@TcKimlikNo
 	private String identity;
 	@Column(name="fname")
 	private String firstName;
 	@Column(name="lname")
 	private String lastName;
+	@Iban
 	private String iban;
 	private double salary;
 	@Column(name="dogum_yili")

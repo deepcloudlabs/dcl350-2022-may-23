@@ -33,7 +33,7 @@ public class StandardHrService implements HrService {
 	}
 
 	@Override
-	@Transactional(isolation=Isolation.SERIALIZABLE)
+	@Transactional
 	public HireEmployeeResponse hireEmployee(HireEmployeeRequest request) {
 		var employee = modelMapper.map(request, Employee.class);
 		try {

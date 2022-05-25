@@ -31,7 +31,7 @@ public class EmployeeRepositoryJpaAdapter implements EmployeeRepository {
 	}
 
 	@Override
-	@Transactional(isolation=Isolation.REPEATABLE_READ, propagation = Propagation.REQUIRES_NEW)
+	@Transactional
 	public Employee persist(Employee employee) {
 		empRepo.save(modelMapper.map(employee, EmployeeEntity.class));
 		return employee;

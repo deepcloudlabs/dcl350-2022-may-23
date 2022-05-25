@@ -15,6 +15,7 @@ import com.example.hr.dto.request.HireEmployeeRequest;
 import com.example.hr.dto.response.EmployeeResponse;
 import com.example.hr.dto.response.HireEmployeeResponse;
 import com.example.hr.service.HrService;
+import com.example.validation.TcKimlikNo;
 
 @RestController
 @RequestScope
@@ -29,12 +30,12 @@ public class HrApplicationController {
 	}
 
 	@GetMapping("{identity}")
-	public EmployeeResponse getEmployeeByIdentity(@PathVariable String identity) {
+	public EmployeeResponse getEmployeeByIdentity(@PathVariable @TcKimlikNo String identity) {
 		return hrService.findEmployeeById(identity);
 	}
 	
 	@PostMapping
-	public HireEmployeeResponse hireEmployee(@RequestBody HireEmployeeRequest request) {
+	public HireEmployeeResponse hireEmployee(@RequestBody @Validated HireEmployeeRequest request) {
 		return hrService.hireEmployee(request);
 	}
 	
