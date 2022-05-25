@@ -4,8 +4,6 @@ import java.util.Optional;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Repository;
-import org.springframework.transaction.annotation.Isolation;
-import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.example.hr.domain.Employee;
