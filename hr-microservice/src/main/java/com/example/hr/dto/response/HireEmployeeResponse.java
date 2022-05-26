@@ -1,5 +1,8 @@
 package com.example.hr.dto.response;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
+
+@JsonInclude(JsonInclude.Include.NON_NULL) 	
 public class HireEmployeeResponse {
 
 	private final String status;

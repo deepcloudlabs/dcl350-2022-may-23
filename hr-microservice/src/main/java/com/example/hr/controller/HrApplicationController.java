@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.context.annotation.RequestScope;
 
 import com.example.hr.dto.request.HireEmployeeRequest;
 import com.example.hr.dto.response.EmployeeResponse;
@@ -24,7 +23,7 @@ import io.swagger.v3.oas.annotations.info.Info;
 import io.swagger.v3.oas.annotations.info.License;
 
 @RestController
-@RequestScope
+//@RequestScope
 @RequestMapping("/employees")
 @Validated
 @CrossOrigin
@@ -42,6 +41,7 @@ public class HrApplicationController {
 	
 	public HrApplicationController(HrService hrService) {
 		this.hrService = hrService;
+		System.err.println(hrService.getClass());
 	}
 	
 	@Operation(summary = "Get employee information by its identity")
